@@ -18,3 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::group[['middleware' =>['web']], function (){
+	
+	Route::post('/signup', ['uses' =>'UserController@postSignUp',
+							'as' => 'signup'
+	
+	])
+}]
